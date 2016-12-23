@@ -38,19 +38,21 @@
         <div class="col-sm-8 blog-main">
 
             <div class="blog-post">
-                <h2>Zapier Status Change Api</h2>
-                <p>Sends data to zapier on status change of work order</p>
+                <h2>Zapier Update Api</h2>
+                <p>Sends data to zapier on status change of work order, new work order creation and new request creation.</p>
                 <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/public/workorder-status-change</span></h4>
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/public/workorder-updated</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
                         <li>roleId - Role id of the user's company.</li>
                         <li>taskId - Id of the work order.</li>
-                        <li>previousStatus - Status before change(open, inProgress, onHold ie format saved in database).</li>
+                        <li>event - Type of event (ie 'status_changed','workorder_created','request_created'.</li>
+                        <li>useId - Id of the user triggering event.</li>
+                        <li>previousStatus - Status before change(open, inProgress, onHold ie format saved in database).Passed only in case of status_changed event.</li>
                     </ul>
                 </div>
-                <p>This api must be called after change of workorder status.</p>
+                <p>This api must be called after the completion of task ie after workorder/request has been created or status has been changed.</p>
             </div><!-- /.blog-post -->
 
             <div class="blog-post">
