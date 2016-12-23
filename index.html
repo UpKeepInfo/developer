@@ -49,7 +49,7 @@
                         <li>taskId - Id of the work order.</li>
                         <li>event - Type of event (ie 'status_changed','workorder_created','request_created').</li>
                         <li>userId - Id of the user triggering event.</li>
-                        <li>previousStatus - Status before change(open, inProgress, onHold ie format saved in database).Passed only in case of status_changed event.</li>
+                        <li>previousStatus - Status before change(open, inProgress, onHold ie format saved in database).This field is required when event is 'status_changed' and need to be skipped for other events.</li>
                     </ul>
                 </div>
                 <p>This api must be called after the completion of task ie after workorder/request has been created or status has been changed.</p>
