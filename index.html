@@ -39,7 +39,7 @@
 
             <div class="blog-post">
                 <h2>Zapier Update Api</h2>
-                <p>Sends data to zapier on status change of work order, new work order creation and new request creation.</p>
+                <p>Sends data to zapier on status change of work order, new work order creation, request approved and new request creation.</p>
                 <div class="highlight">
                     <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/public/workorder-updated</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
@@ -47,7 +47,7 @@
                     <ul>
                         <li>roleId - Role id of the user's company.</li>
                         <li>taskId - Id of the work order.</li>
-                        <li>event - Type of event (ie 'status_changed','workorder_created','request_created').</li>
+                        <li>event - Type of event (ie 'status_changed','workorder_created','request_created', 'request_approved').</li>
                         <li>userId - Id of the user triggering event.</li>
                         <li>previousStatus - Status before change(open, inProgress, onHold ie format saved in database).This field is required when event is 'status_changed' and needs to be skipped for other events.</li>
                     </ul>
