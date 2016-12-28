@@ -46,7 +46,7 @@
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
                         <li>roleId - Role id of the user's company.</li>
-                        <li>taskId - Id of the work order.</li>
+                        <li>workOrderId - Id of the work order.</li>
                         <li>event - Type of event (ie 'status_changed','workorder_created','request_created', 'request_approved').</li>
                         <li>userId - Id of the user triggering event.</li>
                         <li>previousStatus - Status before change(open, inProgress, onHold ie format saved in database).This field is required when event is 'status_changed' and needs to be skipped for other events.</li>
@@ -79,8 +79,8 @@
                     <ul>
                         <li>roleId - Role id of the user's company sending invite.</li>
                         <li>companyName  - Company name of the user's company sending request.</li>
-                        <li>vendorId  - Email id of vendor.</li>
-                        <li>senderId  - Email id of sender.</li>
+                        <li>vendorEmailAddress  - Email id of vendor.</li>
+                        <li>senderEmailAddress  - Email id of sender.</li>
                     </ul>
                 </div>
                 <p>On success invite mail will be sent to the user having accept link https://demo-api.onupkeep.com/api/accept-invite?user=XXXXX&company=XXXX if vendor is not upkeep user message will have please sign up first also.</p>
@@ -100,11 +100,11 @@
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
                         <li>roleId - Role id of the user's company creating request.</li>
-                        <li>vendorId  - Email id of vendor (A drop down can be shown quering sharedInvite class for roleId and is accepted = true.</li>
-                        <li>emailAddress  - Email id of requester.</li>
-                        <li>title - title of request.</li>
+                        <li>senderEmailAddress  - Email id of vendor (A drop down can be shown quering sharedInvite class for roleId and is accepted = true.</li>
+                        <li>requesterEmailAddress  - Email id of requester.</li>
+                        <li>requestTitle - title of request.</li>
                         <li>additionalInfo - Additional note of request.</li>
-                        <li>priority - Number representing priority.</li>
+                        <li>priorityNumber - Number representing priority.</li>
                     </ul>
                 </div>
                 <p>On success id and title of request will be returned. and mail will be sent to vendor. the acl will have read permission to none and write permission to both sharing companies</p>
@@ -132,7 +132,7 @@
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
-                        <li>id - role id of work order.</li>
+                        <li>workOrderId - id of work order.</li>
                     </ul>
                 </div>
                 <p>On success returns work order with related fields.</p>
