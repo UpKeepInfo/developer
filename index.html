@@ -73,7 +73,7 @@
                 <h2>Send Share Invites</h2>
                 <p>Send invite to vendor to accept sharing</p>
                 <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/share-invites</span></h4>
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/share-invites</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
@@ -83,7 +83,7 @@
                         <li>senderEmailAddress  - Email id of sender.</li>
                     </ul>
                 </div>
-                <p>On success invite mail will be sent to the user having accept link https://demo-api.onupkeep.com/api/accept-invite?user=XXXXX&company=XXXX if vendor is not upkeep user message will have please sign up first also.</p>
+                <p>On success invite mail will be sent to the user having accept link https://demo-api.onupkeep.com/api/invite-response?user=XXXXX&company=XXXX&accept=1 if vendor is not upkeep user message will have please sign up first also. Share deny functionality is also there but will be implemented with ui</p>
             </div><!-- /.blog-post -->
 
             <div class="blog-post">
@@ -92,29 +92,41 @@
             </div><!-- /.blog-post -->
 
             <div class="blog-post">
-                <h2>Create shared request</h2>
-                <p>Creates a shared request</p>
+                <h2>Vendor list</h2>
+                <p>Returns vendor list for who have accepted request.</p>
                 <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/shared-request</span></h4>
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/vendor-list</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
                         <li>roleId - Role id of the user's company creating request.</li>
-                        <li>vendorEmailAddress  - Email id of vendor (A drop down can be shown quering sharedInvite class for roleId and is accepted = true.</li>
-                        <li>requesterEmailAddress  - Email id of requester.</li>
-                        <li>requestTitle - title of request.</li>
-                        <li>additionalInfo - Additional note of request.</li>
-                        <li>priorityNumber - Number representing priority.</li>
                     </ul>
                 </div>
-                <p>On success id and title of request will be returned. and mail will be sent to vendor. the acl will have read permission to none and write permission to both sharing companies</p>
+                <p>On success vendorEmailAddresses will have array of user email addresses</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Share work order</h2>
+                <p>Shares work order with vendor</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/shared-workorder</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>roleId - Role id of the user's company creating request.</li>
+                        <li>vendorEmailAddress  - Email id of vendor.</li>
+                        <li>senderEmailAddress  - Email id of person sharing work order.</li>
+                        <li>workOrderId - id of the work order to be shared.</li>
+                    </ul>
+                </div>
+                <p>On success workOrder key will have work order object</p>
             </div><!-- /.blog-post -->
 
             <div class="blog-post">
                 <h2>Fetch all shared work orders of a company</h2>
                 <p>Returns all the shared work orders of a company along with related fields.</p>
                 <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/fetch-shared-workorders</span></h4>
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/fetch-shared-workorders</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
@@ -128,7 +140,7 @@
                 <h2>Fetch a shared work order by id</h2>
                 <p>Returns a work order with related fields</p>
                 <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/fetch-shared-workorder</span></h4>
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/fetch-shared-workorder</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
                     <h4><span class="key">Parameters</span>:</h4>
                     <ul>
@@ -137,14 +149,6 @@
                 </div>
                 <p>On success returns work order with related fields.</p>
             </div><!-- /.blog-post -->
-
-            <div class="blog-post">
-                <h2>Updating shared work orders</h2>
-                <p>Since both the sharing companies have write access to work order it can updated like normal work order</p>
-            </div><!-- /.blog-post -->
-            <div class="blog-post">
-                <h2>Note- These apis are not final changes are required like uploading files in requests,methods,parameter changes but the concept can be tested with these</h2>
-            </div>
 
         </div><!-- /.blog-main -->
 
