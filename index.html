@@ -69,43 +69,37 @@
                 <p>On success user plan information will be returned the format will be similar to cloud function getPremiumUserDetails.</p>
             </div><!-- /.blog-post -->
 
-            <div class="blog-post">
-                <h2>Send Share Invites</h2>
-                <p>Send invite to vendor to accept sharing</p>
-                <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/share-invites</span></h4>
-                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
-                    <h4><span class="key">Parameters</span>:</h4>
-                    <ul>
-                        <li>sessionToken  - Session token of user sending invite.</li>
-                        <li>vendorEmailAddress  - Email id of vendor.</li>
-                    </ul>
-                </div>
-                <p>On success invite mail will be sent to the user having accept link https://demo-api.onupkeep.com/api/invite-response?user=XXXXX&company=XXXX&accept=1 if vendor is not upkeep user message will have please sign up first also. Share deny functionality is also there but will be implemented with ui</p>
-            </div><!-- /.blog-post -->
+            <!--<div class="blog-post">-->
+                <!--<h2>Send Share Invites</h2>-->
+                <!--<p>Send invite to vendor to accept sharing</p>-->
+                <!--<div class="highlight">-->
+                    <!--<h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/share-invites</span></h4>-->
+                    <!--<h4><span class="key">Method</span>: <span class="val">POST</span></h4>-->
+                    <!--<h4><span class="key">Parameters</span>:</h4>-->
+                    <!--<ul>-->
+                        <!--<li>sessionToken  - Session token of user sending invite.</li>-->
+                        <!--<li>vendorEmailAddress  - Email id of vendor.</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<p>On success invite mail will be sent to the user having accept link https://demo-api.onupkeep.com/api/invite-response?user=XXXXX&company=XXXX&accept=1 if vendor is not upkeep user message will have please sign up first also. Share deny functionality is also there but will be implemented with ui</p>-->
+            <!--</div>-->
+            <!--<div class="blog-post">-->
+                <!--<h2>Vendor list</h2>-->
+                <!--<p>Returns vendor list for who have accepted request.</p>-->
+                <!--<div class="highlight">-->
+                    <!--<h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/vendors</span></h4>-->
+                    <!--<h4><span class="key">Method</span>: <span class="val">POST</span></h4>-->
+                    <!--<h4><span class="key">Parameters</span>:</h4>-->
+                    <!--<ul>-->
+                        <!--<li>sessionToken  - Session token of user sending invite.</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+                <!--<p>On success  array of email addresses of venders who have accepted invite will be returned.</p>-->
+            <!--</div>-->
 
             <div class="blog-post">
-                <h2>Accepting invites</h2>
-                <p>On clicking above link the invite will be accepted. The sender will also be notified about the invite accept. If the user is not upkeep user, Please sign up first message will be returned</p>
-            </div><!-- /.blog-post -->
-
-            <div class="blog-post">
-                <h2>Vendor list</h2>
-                <p>Returns vendor list for who have accepted request.</p>
-                <div class="highlight">
-                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/vendors</span></h4>
-                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
-                    <h4><span class="key">Parameters</span>:</h4>
-                    <ul>
-                        <li>sessionToken  - Session token of user sending invite.</li>
-                    </ul>
-                </div>
-                <p>On success  array of email addresses of venders who have accepted invite will be returned.</p>
-            </div><!-- /.blog-post -->
-
-            <div class="blog-post">
-                <h2>Share work order</h2>
-                <p>Shares work order with vendor</p>
+                <h2>Send work order share invite</h2>
+                <p>Sends work order share invite to vendor with vendor</p>
                 <div class="highlight">
                     <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/shared-workorder</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
@@ -116,8 +110,13 @@
                         <li>workOrderId - id of the work order to be shared.</li>
                     </ul>
                 </div>
-                <p>On success will return work order object</p>
+                <p>On success invite will be sent to vendor with accept link</p>
             </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Accepting invites</h2>
+                <p>On clicking above link the invite will be accepted. The sender will also be notified about the invite accept. If the user is not upkeep user, Please sign up first message will be returned</p>
+            </div>
 
             <div class="blog-post">
                 <h2>Fetch all shared work orders of a company</h2>
