@@ -38,6 +38,59 @@
         <div class="col-sm-8 blog-main">
 
             <div class="blog-post">
+                <h2>Enable/Disable Sharing of work order with unauthorised user</h2>
+                <p>Enabling and Disabling of sharing will be done via frontent just like any normal field update. '<b>shareStatus</b>' will be set to <b>true</b> or <b>false</b> enable sharing and disable it respectively.</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Get share link</h2>
+                <p>Will return share link</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/share-link</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>workOrderId - Id of the work order.</li>
+                     </ul>
+                </div>
+                <p>On succes returned <b>link</b> key will have shared workorder url.</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Fetch shared work order for unauthorised user</h2>
+                <p>The shareable link will redirect the user to frontend platform. the link will be of the format  'https://vendor.onupkeep.com/#/workorder/WOKORDER_ID'. On the platform make call to this api.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/public-shared-workorder</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>workOrderId - Id of the work order.</li>
+                   </ul>
+                </div>
+                <p>Work order object will be returned on success.</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Update shared work order</h2>
+                <p>Updates Shared work order by unauthorised user</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/shared-workorder-update</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Encoding</span>: <span class="val">multipart/form-data</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>workOrderId - Id of the work order.</li>
+                        <li>status(Optional) - new status of work order ('open', 'complete', 'onHold', 'inProgress').</li>
+                        <li>time(Optional) - string representing time.</li>
+                        <li>cost(Optional) - string representing cost.</li>
+                        <li>updateNote(Optional) - string representing update note.</li>
+                        <li>image(Optional) - File upload object.</li>
+                    </ul>
+                </div>
+                <p>Work order object will be returned on success. For image updates request must be 'multipart/form-data' and the key name for file will be 'image' as described above</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
                 <h2>Zapier Update Api</h2>
                 <p>Sends data to zapier on status change of work order, new work order creation, request approved and new request creation.</p>
                 <div class="highlight">
