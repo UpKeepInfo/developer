@@ -36,15 +36,19 @@
     <div class="row">
 
         <div class="col-sm-8 blog-main">
-
             <div class="blog-post">
-                <h2>Enable/Disable Sharing of work order with unauthorised user</h2>
-                <a href="public-sharing.html">Public Work Order Sharing</a>
-                <a href="inter-company.html">Inter Company Work Order Sharing</a>
-                <a href="zapier.html">Zapier Calls</a>
-                <a href="general-util.html">General Apis</a>
-                <a href="err-format.html">Error Format</a>
-            </div><!-- /.blog-post -->
+                <h2>Get User Plan Details</h2>
+                <p>Fetch user plan related information from role</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/app/user-plan-status</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>roleId - Role id of the user's company.</li>
+                    </ul>
+                </div>
+                <p>On success user plan information will be returned the format will be similar to cloud function getPremiumUserDetails.</p>
+            </div>
         </div><!-- /.blog-main -->
 
     </div><!-- /.row -->
