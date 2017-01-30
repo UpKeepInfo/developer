@@ -38,7 +38,7 @@
         <div class="col-sm-8 blog-main">
 
             <div class="blog-post">
-                <h2>Enable/Disable Sharing of work order with unauthorised user</h2>
+                <h2>Enable/Disable Sharing of work order with vendor</h2>
                 <p>Enabling and Disabling of sharing will be done via frontent just like any normal field update. '<b>shareStatus</b>' will be set to <b>true</b> or <b>false</b> enable sharing and disable it respectively. When work order sharing is enabled set <b>objectRole</b> field in work order to role object of the company and set <b>companySecret</b> field to role name of the company.</p>
             </div><!-- /.blog-post -->
 
@@ -57,7 +57,7 @@
             </div><!-- /.blog-post -->
 
             <div class="blog-post">
-                <h2>Fetch shared work order for unauthorised user</h2>
+                <h2>Fetch shared work order for vendor</h2>
                 <p>The shareable link will redirect the user to frontend platform. the link will be of the format  'https://vendor.onupkeep.com/#/workorder/WOKORDER_ID'. On the platform make call to this api.</p>
                 <div class="highlight">
                     <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/public-shared-workorder</span></h4>
@@ -73,7 +73,7 @@
 
             <div class="blog-post">
                 <h2>Update shared work order</h2>
-                <p>Updates Shared work order by unauthorised user</p>
+                <p>Updates Shared work order by vendor</p>
                 <div class="highlight">
                     <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/shared-workorder-update</span></h4>
                     <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
