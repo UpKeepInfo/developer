@@ -37,6 +37,37 @@
 
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
+                <h2 id="sign-up">Sign Up</h2>
+                <p>Api to sign up</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/auth/signup</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>email - Email id of person signing up.</li>
+                        <li>password - Password.</li>
+                        <li>companyName - Company Name of user.</li>
+                        <li>platform - Platform used for sign up(web,android,ios).</li>
+                        <li>companyBusinessType (Optional) - String representing business type.</li>
+                    </ul>
+                </div>
+                <p>On success session token will be returned in <b>sessionToken</b> key</p>
+                <p>On error a json with  <b>message</b> key will show message returned by parse signup.</p>
+            </div>
+             <div class="blog-post">
+                <h2>Locations export to csv</h2>
+                <p>Export company locations to a csv file</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://api.onupkeep.com/api/app/export-csv-locations</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken - Session token of the user.</li>
+                    </ul>
+                </div>
+                <p>On success email will be sent to user with export link and link will also be returned in response. Opening this link will download csv file</p>
+            </div>
+            <div class="blog-post">
                 <h2>Refering Upkeep</h2>
                 <p>Api to refer upkeep to someone.</p>
                 <div class="highlight">
@@ -50,7 +81,7 @@
                 </div>
                 <p>On success emails will be sent to people introducing them to upkeep.</p>
             </div>
-             <div class="blog-post">
+            <div class="blog-post">
                 <h2>Locations export to csv</h2>
                 <p>Export company locations to a csv file</p>
                 <div class="highlight">
