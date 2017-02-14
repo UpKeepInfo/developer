@@ -63,7 +63,15 @@
                         <li>sessionToken  - Session token of user making request.</li>
                     </ul>
                 </div>
-                <p>On success array of objects will be returned. Each object will have <b>workorder</b> key having work order with all related fields and <b>sharedData</b> key with info who shared with whom and at what time.</p>
+                <p>On success array of objects will be returned. Each object will have <b>workorder</b> key having work order with all related fields and <b>shareInfo</b> key with info who shared with whom and at what time eg
+                    <pre>
+                    "shareInfo": [
+                    {
+                    "from": "manishsangwan+qwe3@codemymobile.com",
+                    "to": "manishsangwan+qwee@codemymobile.com",
+                    "at": "2017-02-14T05:29:49.283Z"
+                    }
+                ]</pre></p>
             </div><!-- /.blog-post -->
 
 
@@ -78,7 +86,7 @@
                         <li>sessionToken  - Session token of user making request.</li>
                     </ul>
                 </div>
-                <p>On success array of objects will be returned. Each object will have <b>workorder</b> key having work order with all related fields and <b>sharedData</b> key with info who shared with whom and at what time.</p>
+                <p>On success array of objects will be returned. Each object will have <b>workorder</b> key having work order with all related fields and <b>shareInfo</b> key with info who shared with whom and at what time.</p>
             </div><!-- /.blog-post -->
 
             <div class="blog-post">
@@ -93,7 +101,7 @@
                         <li>workOrderId - id of the Shared work order.</li>
                     </ul>
                 </div>
-                <p>On success object with work order(including all related field) and sharedData will be returned.</p>
+                <p>On success object with <b>workorder</b> (including all related field) and <b>shareInfo</b> will be returned.</p>
             </div><!-- /.blog-post -->
 
         </div><!-- /.blog-main -->
