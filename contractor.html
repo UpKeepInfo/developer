@@ -49,7 +49,7 @@
                         <li>workOrderId - id of the work order to be shared.</li>
                     </ul>
                 </div>
-                <p>On success email will be sent to contractor with link to view work order. Viewing this link will require to be logged in.</p>
+                <p>On success email will be sent to contractor with link to view work order. Viewing this link will require him to be logged in(or sign up).</p>
             </div>
 
             <div class="blog-post">
@@ -103,6 +103,72 @@
                 </div>
                 <p>On success object with <b>workorder</b> (including all related field) and <b>shareInfo</b> will be returned.</p>
             </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Update shared work order</h2>
+                <p>Api used by contractor to update work order</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/shared-workorder-update</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Encoding</span>: <span class="val">multipart/form-data</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken - Session token of contractor.</li>
+                        <li>workOrderId - Id of the work order.</li>
+                        <li>status(Optional) - new status of work order ('open', 'complete', 'onHold', 'inProgress').</li>
+                        <li>time(Optional) - string representing time.</li>
+                        <li>cost(Optional) - string representing cost.</li>
+                        <li>updateNote(Optional) - string representing update note.</li>
+                        <li>image(Optional) - File upload object for update image.</li>
+                    </ul>
+                </div>
+                <p>On success workorder object with all fields included will be returned. Work order object will be returned on success. For image updates request must be 'multipart/form-data' and the key name for file will be 'image' as described above.</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Contractors list</h2>
+                <p>Api to list all the contractors that the company has shared with.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/contractors-list</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken  - Session token of user making request.</li>
+                    </ul>
+                </div>
+                <p>On success array of contractor email ids will be returned.</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Access revoke by contractor</h2>
+                <p>Api used by contractor in case he doesn't want a work order to be shared with him.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/revoke-access</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken  - Session token of user making request.</li>
+                        <li>workOrderId  - Id of the work order.</li>
+                    </ul>
+                </div>
+                <p>On success access to the perticular work order will be revoked and <b>message</b> key will have success message.</p>
+            </div><!-- /.blog-post -->
+
+            <div class="blog-post">
+                <h2>Fetch a perticular work order shared by a company</h2>
+                <p>Returns work order with perticular id shared by user's company</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/workorder-shared-by</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken  - Session token of user making request.</li>
+                        <li>workOrderId - id of the Shared work order.</li>
+                    </ul>
+                </div>
+                <p>On success object with <b>workorder</b> (including all related field) and <b>shareInfo</b> will be returned.</p>
+            </div><!-- /.blog-post -->
+
 
         </div><!-- /.blog-main -->
 
