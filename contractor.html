@@ -169,6 +169,36 @@
                 <p>On success object with <b>workorder</b> (including all related field) and <b>shareInfo</b> will be returned.</p>
             </div><!-- /.blog-post -->
 
+            <div class="blog-post">
+                <h2>Mark a work order paid</h2>
+                <p>Api used by sharing company user to mark a work order paid, meaning involved contractor has been paid.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/mark-paid</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken  - Session token of user making request.</li>
+                        <li>workOrderId  - Id of the work order.</li>
+                    </ul>
+                </div>
+                <p>On success <b>isPaid</b> field of the work order will be set to true and the work order object will be returned.</p>
+            </div>
+
+            <div class="blog-post">
+                <h2>Revoke access from contractor</h2>
+                <p>Api used by sharing company user to revoke access from a contractor from perticular work order.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/revoke-access</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken  - Session token of user making request.</li>
+                        <li>workOrderId  - Id of the work order.</li>
+                        <li>contractorEmail  - Email id of contractor.</li>
+                    </ul>
+                </div>
+                <p>On success access to the perticular work order will be revoked and <b>message</b> key will have success message.</p>
+            </div>
 
         </div><!-- /.blog-main -->
 
