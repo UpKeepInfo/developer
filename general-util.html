@@ -105,7 +105,24 @@
                         <li>roleId - Role id of the user's company.</li>
                     </ul>
                 </div>
-                <p>On success user plan information will be returned the format will be similar to cloud function getPremiumUserDetails.</p>
+                <p>On success user plan information will be returned the format will be similar to cloud function getPremiumUserDetails eg</p>
+                <pre>
+                    {
+                        "companyID": {...},
+                        "creditCardDetails": [
+                          {...}
+                        ],
+                        "defaultSource": "card_id",
+                        "subscription": {...},
+                        "isPremiumUser": true,
+                        "isSpecialUser": false,
+                        "planName": "Starter Annual",
+                        "activeUntil": 1511345407,
+                        "premiumAccountStatus": "STARTER_PLAN_ACTIVE",
+                        "exceedsLimitOnPlan": true,
+                        "noOfUsers": 5
+                    }
+                </pre>
             </div>
         </div><!-- /.blog-main -->
 
