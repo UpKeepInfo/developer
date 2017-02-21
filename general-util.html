@@ -37,6 +37,17 @@
 
         <div class="col-sm-8 blog-main">
             <div class="blog-post">
+                <h2 id="remove-logo">Remove upkeep Logo from PDFs</h2>
+                <p>Ways to remove upkeep logo</p>
+                <p><b>Work Order</b>: add query string excludeUpkeepLogo=1 to the get request of print work order eg.</p>
+                <div class="highlight">
+                    <p>https://demo-api.onupkeep.com/api/print-workorder?id=d7NXxmgBqy&excludeUpkeepLogo=1</p>
+                </div>
+                <p><b>Invoice</b>: add parameter excludeUpkeepLogo: true to the post request of print invoice.</p>
+                <p><b>Purchase Order</b>: add parameter excludeUpkeepLogo: true to the post request of print purchase order.</p>
+            </div>
+
+            <div class="blog-post">
                 <h2 id="sign-up">Sign Up</h2>
                 <p>Api to sign up</p>
                 <div class="highlight">
