@@ -247,6 +247,24 @@
                 <p>On success <b>formItem</b> key will have updated form item object</p>
             </div>
 
+            <div class="blog-post">
+                <h2>Add attachment to form item</h2>
+                <p>Api used by contractor to attach comment or image to form item.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/public/attach-to-form-item</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Encoding</span>: <span class="val">multipart/form-data</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken  - Session token of user making request.</li>
+                        <li>workOrderId  - Id of the work order.</li>
+                        <li>formItemId  - Id of the form item.</li>
+                        <li>comment  - String representing comment to attach.</li>
+                        <li>image  - File upload object image to attach.</li>
+                    </ul>
+                </div>
+                <p>On success <b>formItem</b> key will have updated form item object.<b>Note: image and comment field are mutually exclusive</b>.</p>
+            </div>
 
         </div><!-- /.blog-main -->
 
