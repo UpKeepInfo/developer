@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Documentation Public APIs</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="blog-header">
+        <h1 class="blog-title">General Apis</h1>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-8 blog-main">
+            <div class="blog-post">
+                <h2 id="comnt">Ryan's comments on flow.</h2>
+                <i>
+                Okay so basically we need an API that takes in a few additional parameters and adds a few fields into the “role” field<br>
+                Business Name<br>
+                Business Address (line 1)<br>
+                business address (line 2 OPTIONAL)<br>
+                business city<br>
+                business state<br>
+                business zip code<br>
+                business country<br>
+                User First Name<br>
+                User Last Name<br>
+                Now when this API is called — we need to check whether or not the user is a premium user<br>
+                if the user IS a premium user then we need to call the Lob API — send a postcard with the front being that picture that is set in Trello<br>
+                and then the back should have a message — right now the default message is “Thanks so much for being a big supporter of UpKeep!”<br>
+                The from address should be UpKeep Technologies, Inc.<br>
+                1100 Glendon Ave Suite 1734 Los Angeles, CA 90024<br>
+                then we need to mark in the role class “premiumUserPostcard = true”<br>
+                OTHERWISE<br>
+                if the user is >10 work orders AND not a premium user<br>
+                then we need to set “freeUserPostcard = true”<br>
+                then call a different Lob API to send them a postcard saying “Looks like you’re getting the hang of UpKeep! We’d love to see how we can help out”<br>
+                from address should be the same<br>
+                we should add in all of the business information from the API into the role class<br>
+                and update the user class with the user first name and last name<br>
+                Before we send out any postcards<br>
+                there is a separate API in Lob to validate the address<br>
+                we should call this API and make sure that the address is valid<br>
+                The “To” for the postcard should be<br>
+                UserFirstName UserLastName<br>
+                and then business address<br>
+                Only 1 postcard should be sent for each company role class as well<br>
+                or sorry<br>
+                1 postcard for the freePostcard and 1 postcard for the premium<br>
+                does this all make sense?<br>
+                And in case of <10 work order and not a premium user.<br>
+                we don’t send anything
+                </i>
+            </div>
+
+            <div class="blog-post">
+                <h2 id="country-codes">Api to fetch country codes</h2>
+                <p>Lob address apis expect two character country short names. This api provides the short name mapping for countries</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/app/lob-country-codes</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                </div>
+                <p>On success array with short code mapping will be returned.</p>
+                <pre>
+                [
+                    {
+                      "name": "United States",
+                      "short_name": "US",
+                      "object": "country"
+                    },
+                    {
+                      "name": "Afghanistan",
+                      "short_name": "AF",
+                      "object": "country"
+                    },
+                    {
+                      "name": "Albania",
+                      "short_name": "AL",
+                      "object": "country"
+                    },
+                     ....
+                </pre>
+            </div>
+            <div class="blog-post">
+                <h2 id="state-codes">Api to fetch state codes</h2>
+                <p>Lob address apis expect two character state name for US.This api provides the short name mapping for states</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/app/lob-us-state-codes</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                </div>
+                <p>On success array with short code mapping will be returned.</p>
+                <pre>
+                [
+                  {
+                    "short_name": "AA",
+                    "name": "U.S. Armed Forces – Americas",
+                    "object": "state"
+                  },
+                  {
+                    "short_name": "AE",
+                    "name": "U.S. Armed Forces – Europe",
+                    "object": "state"
+                  },
+                  {
+                    "short_name": "AK",
+                    "name": "Alaska",
+                    "object": "state"
+                  },
+
+                     ....
+                </pre>
+            </div>
+            <div class="blog-post">
+                <h2>Api to create post card</h2>
+                <p>Registers a post card object with address.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/app/send-post-card</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken - Session token of the user.</li>
+                        <li>userFirstName - First name of user.</li>
+                        <li>userLastName - Last name of user.</li>
+                        <li>businessName - Name of the company.The total string must be no longer than 200 characters</li>
+                        <li>businessAddressLine1 - First line of company address.The total string must be no longer than 200 characters.</li>
+                        <li>businessAddressLine2(Optional) - Second line of company address.The total string must be no longer than 200 characters.</li>
+                        <li>businessCity - City where company is located. The total string must be no longer than 200 characters.</li>
+                        <li>businessZipCode - Zip code.Must follow the ZIP format of 12345 or ZIP+4 format of 12345-1234 if address_country is US and the total string can not be any longer than 40 characters.</li>
+                        <li>businessState - Must be a 2 letter state short-name code if address_country is US, otherwise optional and the total string can not be any longer than 200 characters.</li>
+                        <li>businessCountry - Must be a 2 letter country short-name code (ISO 3166).Can be obtained using api above.</li>
+                    </ul>
+                </div>
+                <p>On success status code 200 will be returned with success message.</p>
+            </div>
+        </div><!-- /.blog-main -->
+
+    </div><!-- /.row -->
+
+</div><!-- /.container -->
+<div class="footer">
+
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"><\/script>')</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
