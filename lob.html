@@ -154,7 +154,7 @@
                         <li>businessCountry - Must be a 2 letter country short-name code (ISO 3166).Can be obtained using api above.</li>
                     </ul>
                 </div>
-                <p>On success status code 200 will be returned with success message. Additional fields will be added to role class <b>businessName, businessAddressLine1, businessAddressLine2, businessCity, businessZipCode, businessState, businessCountry</b> and user class <b>firstName</b> and <b>lastName</b> will be updated. Role class will have the fields <b>premiumUserPostcard</b>(if user is paid) or <b>freeUserPostcard</b>(free user with more than 10 work orders) set to <b>true</b>.</p>
+                <p>On success status code 200 will be returned with success message. Additional fields will be added to role class <b>businessName, businessAddressLine1, businessAddressLine2, businessCity, businessZipCode, businessState, businessCountry</b> and user class <b>firstName</b> and <b>lastName</b> will be updated. Role class will have the fields <b>premiumUserPostcard</b>(if user is paid) or <b>freeUserPostcard</b>(free user with more than 10 work orders) set to <b>true</b>. <b>Note:</b> for showing the model to every user once check <b>declinedPostcardPopUp</b> field of user class. set it to <b>true</b> when user declines pop up.</p>
             </div>
         </div><!-- /.blog-main -->
 
