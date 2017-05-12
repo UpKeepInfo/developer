@@ -36,6 +36,29 @@
     <div class="row">
 
         <div class="col-sm-8 blog-main">
+            <div class="blog-post" id="dashboard-count">
+                <h2>Fetch counts for work orders on dashboard</h2>
+                <p>Api to fetch count of open, on hold, closed, pending work orders, total requests and inventory out of stock.</p>
+                <div class="highlight">
+                    <h4><span class="key">Endpoint</span>: <span class="val">https://demo-api.onupkeep.com/api/app/dashboard-count</span></h4>
+                    <h4><span class="key">Method</span>: <span class="val">POST</span></h4>
+                    <h4><span class="key">Parameters</span>:</h4>
+                    <ul>
+                        <li>sessionToken - Session token of the user.</li>
+                    </ul>
+                </div>
+                <p>Response will contain the following objects</p>
+                <pre>
+                    {
+                        "openWorkOrderCount": 183,
+                        "onHoldWorkOrderCount": 9,
+                        "pendingWorkOrderCount": 4,
+                        "completeWorkOrder": 40,
+                        "openRequestCount": 184,
+                        "inventoryOutOfStockCount": 4
+                    }
+                </pre>
+            </div>
             <div class="blog-post">
                 <h2 id="remove-logo">Remove upkeep Logo from PDFs</h2>
                 <p>Ways to remove upkeep logo</p>
